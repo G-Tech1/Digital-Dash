@@ -1,5 +1,13 @@
 # amazing-project
 
+# placeholder name for our project
+
+* Gilan Serrant
+* Jacob Gordon
+* Keenan Nguyen
+* Kervin Clenance
+
+
 
 
 ## Getting started
