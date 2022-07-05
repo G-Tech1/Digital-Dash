@@ -1,7 +1,7 @@
 # amazing-project
+Our name of the project
 
-
-
+One sentence summary of what the application does
 
 
 # placeholder name for our project
@@ -12,14 +12,14 @@
 * Kervin Clenance
 
 ## Intended Market
-
+A paragraph to describe who the target market of people are that will use the application
 
 
 
 
 ## Functionality
 
-
+A list of initial features or functionality that will exist in the application
 
 
 
