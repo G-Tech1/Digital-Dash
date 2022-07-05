@@ -1,5 +1,9 @@
 # amazing-project
 
+
+
+
+
 # placeholder name for our project
 
 * Gilan Serrant
@@ -7,7 +11,21 @@
 * Keenan Nguyen
 * Kervin Clenance
 
+## Intended Market
 
+
+
+
+
+## Functionality
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ## Getting started
