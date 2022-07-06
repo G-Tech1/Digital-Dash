@@ -1,7 +1,7 @@
 # amazing-project
 placeholder-name for project
 
-A social media platform with a built-in webscraper that searches for deals.
+A social media platform, where users could interact with each other.
 
 
 # placeholder name for our project
@@ -12,14 +12,13 @@ A social media platform with a built-in webscraper that searches for deals.
 * Kervin Clenance
 
 ## Intended Market
-The target market of our project will be people who are interested in saving money and sharing their discoveries.
-Through the social media aspect people will be able to share what they find regarding to deals.
+Our MVP will be producing a social media platform.
 
 
 ## Functionality
 
 A list of initial features or functionality that will exist in the application
-- feature 1
+- Social Media Site
 - feature 2
 - feature 3
 - feature 4
