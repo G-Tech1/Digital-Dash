@@ -2,7 +2,7 @@
 
 We'll do our best to keep this in reverse-chronological order, with new comments towards the top.
 
-## Dalonte 6/7
+## Dalonte 7/7
 
 From Slack:
 
