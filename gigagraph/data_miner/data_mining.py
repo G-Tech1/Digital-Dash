@@ -8,10 +8,9 @@ last_total = last_received + last_sent
 session_received = 0
 session_sent = 0
 session_total = 0
-
 ## While loop to track data being sent and received 
-def data_monitor():
-    while True:
+def data_monitor(true):
+    while true:
         bytes_received = psutil.net_io_counters().bytes_recv
         bytes_sent = psutil.net_io_counters().bytes_sent
         bytes_total = bytes_received + bytes_sent

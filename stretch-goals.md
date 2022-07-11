@@ -1,0 +1,3 @@
+- Create functionality to allow users to view data in mb gb or kb
+- Send out seesion data to users per day and per week.
+- network usage and other forms of data for display.
