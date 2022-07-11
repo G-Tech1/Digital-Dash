@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class DailyData(models.Model):
+class SessionData(models.Model):
     day = models.DateField(auto_now_add=True)
     data_sent = models.FloatField()
     data_received = models.FloatField()
