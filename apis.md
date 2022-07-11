@@ -7,4 +7,4 @@
 
   - If you're using a front-end framework (e.g., React, Angular, or Vue), please check available integrations 
 
-  - documentation link: https://www.chartjs.org/docs/latest/charts/line.html
+  - documentation link: https://www.chartjs.org/docs/latest/charts/bar.html
