@@ -2,7 +2,13 @@ import time
 import psutil
 import json
 import requests
+from django.http import JsonResponse
 
+from gigagraph.data_miner.models import SessionData
+
+from .encoders import (
+    DataEncoder,
+)
 
 ## While loop to track data being 
 # 
@@ -59,15 +65,20 @@ def data_monitor(timer):
     # return [session_received, session_sent, session_total]
 
     print("success")
-    response = requests.get("http://inventory-api:8000/api/automobiles/")
+    content = json.dumps({
+        "data_received" : session_received,
+        "data_sent" : session_sent,
+        "data_total": session_total,
+    })
     print("success2")
-    content = json.loads(response.content)
+    data = SessionData.objects.create(**content)
     print("success3")
-    for car in content["autos"]:
-        AutomobileVO.objects.update_or_create(
-            vin=car["vin"],
+    return JsonResponse(
+            data,
+            encoder=DataEncoder,
+            safe=False,
         )
-    print("success4")
+
 
 print("Welcome to Giga Graph")
 set_time = int(input("How long would you like to track your data for?"))
