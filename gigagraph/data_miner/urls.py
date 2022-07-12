@@ -1,11 +1,11 @@
 from django.urls.conf import path
-from views import api_data
+from .views import api_data
 
 urlpatterns = [
     path(
-        "automobiles/",
+        "data/",
         api_data,
-        name="api_automobiles",
+        name="api_data",
     ),
     
 ]

@@ -1,8 +1,12 @@
 import time
 import psutil
+import json
+import requests
 
 
-## While loop to track data being sent and received 
+## While loop to track data being 
+# 
+# sent and received 
 def data_monitor(timer):
     
     running_time = 0
@@ -52,8 +56,18 @@ def data_monitor(timer):
     summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
     print("Data Monitor Complete!")
     print(summary)
-    return [session_received, session_sent, session_total]
+    # return [session_received, session_sent, session_total]
 
+    print("success")
+    response = requests.get("http://inventory-api:8000/api/automobiles/")
+    print("success2")
+    content = json.loads(response.content)
+    print("success3")
+    for car in content["autos"]:
+        AutomobileVO.objects.update_or_create(
+            vin=car["vin"],
+        )
+    print("success4")
 
 print("Welcome to Giga Graph")
 set_time = int(input("How long would you like to track your data for?"))
