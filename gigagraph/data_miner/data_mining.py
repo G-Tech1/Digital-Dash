@@ -36,6 +36,7 @@ def data_monitor(true):
         session_total = session_sent + session_received
 
         time.sleep(1)
+    return [session_received, session_sent, session_total]
 
         # While False:
         #  print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB daily total")

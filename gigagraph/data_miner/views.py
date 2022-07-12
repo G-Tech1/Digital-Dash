@@ -11,4 +11,5 @@ class ListData(View):
         session = SessionData.objects.create(**content)
         return JsonResponse(session, encoder=DataDetailEncoder, safe=False )
     def get(self, request, *args, **kwargs): 
-        sessions = SessionData.objects.get()
+        sessions = SessionData.objects.all()
+        return JsonResponse({"sessions": sessions}, encoder=DataListEncoder, safe=False)
