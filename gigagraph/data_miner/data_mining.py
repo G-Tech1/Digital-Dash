@@ -3,8 +3,10 @@ import psutil
 
 
 ## While loop to track data being sent and received 
-def data_monitor():
+def data_monitor(timer):
     
+    running_time = 0
+
     last_received = psutil.net_io_counters().bytes_recv
     last_sent = psutil.net_io_counters().bytes_sent
     last_total = last_received + last_sent
@@ -28,8 +30,6 @@ def data_monitor():
         mb_new_sent = new_sent / 1024 / 1024
         mb_new_total = new_total / 1024 / 1024
 
-        print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB session total")
-
         last_received = bytes_received
         last_sent = bytes_sent
         last_total = bytes_total
@@ -40,11 +40,26 @@ def data_monitor():
         session_sent += mb_new_sent
         session_total = session_sent + session_received
 
+        print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB session total")
+        
+        running_time +=1
+        
+        if running_time == timer:
+            running = False
+
         time.sleep(1)
 
-    print [session_received, session_sent, session_total]
+    summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
+    print("Data Monitor Complete!")
+    print(summary)
     return [session_received, session_sent, session_total]
 
-data_monitor()
+
+print("Welcome to Giga Graph")
+set_time = int(input("How long would you like to track your data for?"))
+
+print("Starting Data Monitor for " + str(set_time) + " seconds")
+
+data_monitor(set_time)
         # While False:
         #  print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB daily total")
