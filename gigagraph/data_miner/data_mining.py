@@ -1,14 +1,14 @@
 import time
 import psutil
-import json
-import requests
-from django.http import JsonResponse
+# import json
+# import requests
+# from django.http import JsonResponse
 
-from gigagraph.data_miner.models import SessionData
+import models
 
-from .encoders import (
-    DataEncoder,
-)
+# from .encoders import (
+#     DataEncoder,
+# )
 
 ## While loop to track data being 
 # 
@@ -62,29 +62,30 @@ def data_monitor(timer):
     summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
     print("Data Monitor Complete!")
     print(summary)
+    
     # return [session_received, session_sent, session_total]
 
     print("success")
-    content = json.dumps({
+    content = {
         "data_received" : session_received,
         "data_sent" : session_sent,
         "data_total": session_total,
-    })
+    } 
     print("success2")
-    data = SessionData.objects.create(**content)
+    models.SessionData.objects.create(**content)
     print("success3")
-    return JsonResponse(
-            data,
-            encoder=DataEncoder,
-            safe=False,
-        )
+    # return JsonResponse(
+    #         data,
+    #         encoder=DataEncoder,
+    #         safe=False,
+    #     )
 
 
 print("Welcome to Giga Graph")
-set_time = int(input("How long would you like to track your data for?"))
+set_time = input("How long would you like to track your data for?")
 
 print("Starting Data Monitor for " + str(set_time) + " seconds")
 
-data_monitor(set_time)
+data_monitor(int(set_time))
         # While False:
         #  print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB daily total")
