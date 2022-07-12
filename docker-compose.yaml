@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  gigagraph:
+    build:
+      context: ./gigagraph
+      dockerfile: ./dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./gigagraph:/app
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: "postgres://gigagraph:password@database:5432/gigagraph"
+      WAIT_HOSTS: database:5432
+      WAIT_TIMEOUT: 240
+  database:
+    image: postgres
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
+      - ./database/setup:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_DATABASE=gigagraph
+      - POSTGRES_PASSWORD=test-databases
+    ports:
+      - 15432:5432
+
+  # react:
+  #   image: node:latest
+  #   command: npm start
+  #   working_dir: /app
+  #   volumes:
+  #     - ./ghi/app:/app
+  #   environment:
+  #     - HOST=0.0.0.0
+  #     - PORT=3001
+  #   ports:
+  #     - "3001:3001"
+  # web:
+  #   image: nginx
+  #   volumes:
+  #     - ./ghi:/usr/share/nginx/html:ro
+  #   ports:
+  #     - "3000:80"
