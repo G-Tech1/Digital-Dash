@@ -14,6 +14,7 @@ services:
       DATABASE_URL: "postgres://gigagraph:password@database:5432/gigagraph"
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
+      DJWTO_SIGNING_KEY: ${DJWTO_SIGNING_KEY}
   database:
     image: postgres
     volumes:
