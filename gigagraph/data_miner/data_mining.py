@@ -1,18 +1,9 @@
+import requests # importing the requests library
+import json
 import time
 import psutil
-# import json
-# import requests
-# from django.http import JsonResponse
 
-import models
 
-# from .encoders import (
-#     DataEncoder,
-# )
-
-## While loop to track data being 
-# 
-# sent and received 
 def data_monitor(timer):
     
     running_time = 0
@@ -58,28 +49,12 @@ def data_monitor(timer):
             running = False
 
         time.sleep(1)
-    return [session_received, session_sent, session_total]
 
     summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
     print("Data Monitor Complete!")
     print(summary)
     
-    # return [session_received, session_sent, session_total]
-
-    print("success")
-    content = {
-        "data_received" : session_received,
-        "data_sent" : session_sent,
-        "data_total": session_total,
-    } 
-    print("success2")
-    models.SessionData.objects.create(**content)
-    print("success3")
-    # return JsonResponse(
-    #         data,
-    #         encoder=DataEncoder,
-    #         safe=False,
-    #     )
+    return [session_received, session_sent, session_total]
 
 
 print("Welcome to Giga Graph")
@@ -88,5 +63,26 @@ set_time = input("How long would you like to track your data for?")
 print("Starting Data Monitor for " + str(set_time) + " seconds")
 
 data_monitor(int(set_time))
+        
+        
+        
+        
+        
+        
         # While False:
         #  print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB daily total")
+    
+    # print("success")
+    # content = {
+    #     "data_received" : session_received,
+    #     "data_sent" : session_sent,
+    #     "data_total": session_total,
+    # } 
+    # print("success2")
+    # models.SessionData.objects.create(**content)
+    # print("success3")
+    # # return JsonResponse(
+    # #         data,
+    # #         encoder=DataEncoder,
+    # #         safe=False,
+    # #     )
