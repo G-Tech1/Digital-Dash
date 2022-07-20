@@ -60,6 +60,9 @@ def data_monitor(timer):
         time.sleep(1)
     return [session_received, session_sent, session_total]
 
+
+    
+
     summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
     print("Data Monitor Complete!")
     print(summary)
