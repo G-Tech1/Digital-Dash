@@ -13,7 +13,7 @@ class LogInForm extends React.Component {
       }
     async handleSubmit(event) {
         event.preventDefault();
-        const loginUrl = 'http://localhost:8100/login/'
+        const loginUrl = 'http://localhost:8000/login/'
         const fetchConfig = {
             method: "post",
             body: new FormData(event.target),
@@ -21,7 +21,7 @@ class LogInForm extends React.Component {
         };
        const response = await fetch(loginUrl, fetchConfig);
        if (response.ok) {
-        const Url = `http://localhost:8100/api/tokens/mine/`;
+        const Url = `http://localhost:8000/api/tokens/mine/`;
           // localStorage.setItem('access_token', response.headers.jwt_access_token)
           // localStorage.setItem('refresh_token', response.headers.jwt_refresh)
           // window.location.href = "/"
@@ -35,11 +35,18 @@ class LogInForm extends React.Component {
           localStorage.setItem('token', token)
           // DO SOMETHING WITH THE TOKEN SO YOU CAN USE IT
           // IN REQUESTS TO YOUR NON-ACCOUNTS SERVICES
-          window.location.href = "/"
         }
       } catch (e) {
         console.log(e)
       }
+    const res = await fetch('http://localhost:8000/accounts/accounts/')
+    const userList = await res.json()
+    for (let obj of userList) {
+        if (obj["username"] === this.state.username && obj["password"] === this.state.password) {
+            localStorage.setItem('email', obj["email"])
+        }
+    }
+    window.location.href = "/"
     }
     // DO SOMETHING WITH THE ERROR, IF YOU WANT
        }
