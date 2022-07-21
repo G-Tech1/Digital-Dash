@@ -1,4 +1,7 @@
 version: "3.7"
+volumes:
+  dash-data:
+    external: true
 services:
   gigagraph:
     build:
@@ -14,11 +17,12 @@ services:
       DATABASE_URL: "postgres://gigagraph:password@database:5432/gigagraph"
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
+      DJWTO_SIGNING_KEY: ${DJWTO_SIGNING_KEY}
   database:
-    image: postgres
+    image: postgres:14.2-bullseye
     volumes:
-      - ./database/data:/var/lib/postgresql/data
-      - ./database/setup:/docker-entrypoint-initdb.d
+      - dash-data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_DATABASE=gigagraph
       - POSTGRES_PASSWORD=test-databases
