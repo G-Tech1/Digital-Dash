@@ -1,4 +1,4 @@
-from gigagraph.accounts.views import AccountModelEncoder
+from accounts.views import AccountModelEncoder
 from .common.json import ModelEncoder
 
 from .models import SessionData
@@ -12,6 +12,6 @@ class DataListEncoder(ModelEncoder):
         "data_received",
         "data_sent",
         "data_total",
-        "user"
+        # "user"
     ]
-    encoders = {"user": AccountModelEncoder}
+    # encoders = {"user": AccountModelEncoder}
