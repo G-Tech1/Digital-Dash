@@ -19,6 +19,7 @@ function DataList() {
             <th>Date</th>
             <th>Average Upload Bandwidth usage</th>
             <th>Average Download Bandwidth usage</th>
+            <th>Session Time</th>
           </tr>
         </thead>
         <tbody>

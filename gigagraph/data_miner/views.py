@@ -27,21 +27,17 @@ def api_data(request):
         content = json.loads(request.body)
         user = User.objects.get(email=content["user"])
         content["user"] = user
-        data = SessionData.objects.create(**content)
+        try:
+            data = SessionData.objects.get(day=content["day"], user=content["user"])
+            data.session_time += content["session_time"]
+            data.data_sent += content["data_sent"]
+            data.data_received += content["data_received"]
+            data.save()
+        except SessionData.DoesNotExist:
+            data = SessionData.objects.create(**content)
         return JsonResponse(
             data,
             encoder=DataListEncoder,
             safe=False,
         )
-
-
-
-# class ListData(View):
-#     def post(self, request, *args, **kwargs):
-#         content = json.loads(self.request.body)
-#         session = SessionData.objects.create(**content)
-#         return JsonResponse(session, encoder=DataDetailEncoder, safe=False )
-#     def get(self, request, *args, **kwargs): 
-#         sessions = SessionData.objects.get()
-
 
