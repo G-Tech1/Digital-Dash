@@ -1,4 +1,4 @@
-from gigagraph.accounts.views import AccountModelEncoder
+from accounts.views import AccountModelEncoder
 from .common.json import ModelEncoder
 
 from .models import SessionData

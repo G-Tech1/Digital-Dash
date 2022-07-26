@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
 
 function DataList() {
-  
+  if (localStorage.getItem('token') === null) {
+    alert("Please sign in to view your network data")
+    window.location.href = "login"
+  }
   let [dList, setDList] = useState({data: []})
 
   async function fetchData() {
     const res = await fetch('http://localhost:8000/data/', {
         headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+    }
     const newDList = await res.json()
     setDList(newDList)
-  }
   useEffect(() => {fetchData()}, [])
 
     return (

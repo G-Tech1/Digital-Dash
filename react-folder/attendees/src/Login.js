@@ -71,6 +71,7 @@ class LogInForm extends React.Component {
                 </div>
                 <button className="btn btn-lg btn-primary">Log In</button>
               </form>
+              <p>Don't have an account?<Link to='signup'>Sign Up here!</Link></p>
             </div>
           </div>
         </div>

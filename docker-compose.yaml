@@ -3,6 +3,28 @@ volumes:
   dash-data:
     external: true
 services:
+  react:
+    image: node:latest
+    command: bash -c "npm install && npm start"
+    working_dir: /app
+    volumes:
+      - ./react-folder/attendees:/app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+      - NODE_ENV=development
+    ports:
+      - "3001:3001"
+  database:
+    image: postgres:14.2-bullseye
+    volumes:
+      - dash-data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES=gigagraph
+      - POSTGRES_PASSWORD=dash
+    ports:
+      - 15432:5432
   gigagraph:
     build:
       context: ./gigagraph
@@ -18,28 +40,6 @@ services:
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
       DJWTO_SIGNING_KEY: ${DJWTO_SIGNING_KEY}
-  database:
-    image: postgres:14.2-bullseye
-    volumes:
-      - dash-data:/var/lib/postgresql/data
-      - ./db:/docker-entrypoint-initdb.d
-    environment:
-      - POSTGRES_DATABASE=gigagraph
-      - POSTGRES_PASSWORD=test-databases
-    ports:
-      - 15432:5432
-  react:
-    image: node:latest
-    command: npm start
-    working_dir: /app
-    volumes:
-      - ./react-folder/attendees:/app
-    environment:
-      - HOST=0.0.0.0
-      - PORT=3001
-      - NODE_ENV=development
-    ports:
-      - "3001:3001"
   web:
     image: nginx
     volumes:
