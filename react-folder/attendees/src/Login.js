@@ -21,24 +21,9 @@ class LogInForm extends React.Component {
         };
        const response = await fetch(loginUrl, fetchConfig);
        if (response.ok) {
-        const Url = `http://localhost:8000/api/tokens/mine/`;
-          // localStorage.setItem('access_token', response.headers.jwt_access_token)
-          // localStorage.setItem('refresh_token', response.headers.jwt_refresh)
-          // window.location.href = "/"
-       try {
-        const response = await fetch(Url, {
-          credentials: "include",
-        });
-        if (response.ok) {
-          const data = await response.json();
-          const token = data.token;
-          localStorage.setItem('token', token)
-          // DO SOMETHING WITH THE TOKEN SO YOU CAN USE IT
-          // IN REQUESTS TO YOUR NON-ACCOUNTS SERVICES
-        }
-      } catch (e) {
-        console.log(e)
-      }
+    const data = await response.json()
+    const token = data.access
+    localStorage.setItem('token', token)
     const res = await fetch('http://localhost:8000/accounts/accounts/')
     const userList = await res.json()
     for (let obj of userList) {
@@ -86,6 +71,7 @@ class LogInForm extends React.Component {
                 </div>
                 <button className="btn btn-lg btn-primary">Log In</button>
               </form>
+              <p>Don't have an account?<Link to='signup'>Sign Up here!</Link></p>
             </div>
           </div>
         </div>

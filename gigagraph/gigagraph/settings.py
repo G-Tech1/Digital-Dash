@@ -124,7 +124,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
 
-DJWTO_MODE = "TWO-COOKIES"
+DJWTO_MODE = "JSON"
 DJWTO_CSRF = False
 DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
 

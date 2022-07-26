@@ -12,6 +12,7 @@ class DataListEncoder(ModelEncoder):
         "data_received",
         "data_sent",
         "data_total",
-        # "user"
+        "user",
+        "id"
     ]
     # encoders = {"user": AccountModelEncoder}
