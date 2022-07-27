@@ -2,9 +2,12 @@
 # import json
 # import time
 # import psutil
+# from datetime import date
 
 
 # print("Welcome to Giga Graph")
+
+# user = input("Please enter your Giga Graph email:\n")
 # print("How long would you like to track your data for?")
 
 # hours = input("hours?\n")
@@ -64,6 +67,8 @@
 #         time.sleep(1)
 
 #     data = {
+#     "user": user,
+#     "day": date.today(),
 #     "session_time": timer,
 # 	"data_sent": round(session_sent, 2),
 # 	"data_received": round(session_received, 2),
@@ -86,7 +91,3 @@
 
   
 # data_monitor(int(set_time))
-
-        
-        
-        
