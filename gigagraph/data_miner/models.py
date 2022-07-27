@@ -6,6 +6,7 @@ from accounts.models import User
 class SessionData(models.Model):
     user = models.ForeignKey(User, related_name="session_data",on_delete=models.CASCADE)
     day = models.DateField(auto_now_add=True)
+    session_time = models.IntegerField(null=True)
     data_sent = models.FloatField()
     data_received = models.FloatField()
     data_total = models.FloatField()

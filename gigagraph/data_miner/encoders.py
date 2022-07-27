@@ -8,6 +8,7 @@ class DataListEncoder(ModelEncoder):
     model = SessionData
     properties = [
         "day",
+        "session_time",
         "data_received",
         "data_sent",
         "data_total",
