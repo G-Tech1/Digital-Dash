@@ -14,7 +14,7 @@ from .encoders import (
 from .models import SessionData
 from accounts.models import User
 
-@auth.jwt_login_required
+# @auth.jwt_login_required
 @require_http_methods(["GET", "POST"])
 def api_data(request):
     if request.method == "GET":
