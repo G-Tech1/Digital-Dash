@@ -4,4 +4,17 @@
  - I came up with the idea to build cli tools for each performance setting we want to analiyze and make the tools available for users with an account on our website. This idea is dependent on whether or not we would be able to send info collected in our cli tool back to our main website. I built a speed test using stack overflow and youtube tutorials however it did not perform How I wanted it to so I am going to refine it for accuracy. Together as a group we built an extremely simple cli tool and made a successful post request to our main website thus proving that our idea would be able to be implemented.
 
 7/19
- - I added bootstrap to our react frontend and made design changes. I also redesigned our frontend speed test for better accuracy. 
+ - I added bootstrap to our react frontend and made design changes. I also redesigned our frontend speed test for better accuracy.
+
+
+7/20 
+ - I created a datalist.js file in react for to display our user's session data once it has been recorded.
+
+7/21
+ - Had some problems implementing the djwto authentication so I spent alot of time troubleshooting that. Also did research as to how we should implement a downloadable file on our react page.
+
+7/22
+ - Cleaned up my code. Hardened the application using localStorage variables to store user information. Looked into using memory instead of localStorage.
+
+7/25
+ - Started working on our product page. Began working on a feature to update sessiondata instances if one has already been created for the day, and create a new one if one has not been created for the day. this way total session data can be analyzed per day. 
