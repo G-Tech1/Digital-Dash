@@ -4,16 +4,16 @@ import Nav from "./Nav";
 import LogInForm from './Login';
 import DataList from './DataList';
 import SignUpForm from './SignUp';
+import ProductList from './Products';
 function App() {
   return (
       <BrowserRouter>
-      <Routes>
-      <Route path="login" element={<LogInForm />} />
-      <Route path="signup" element={<SignUpForm />} />
-      </Routes>
       <Nav />
       <Routes>
+      <Route path="accounts/login" element={<LogInForm />} />
+      <Route path="accounts/signup" element={<SignUpForm />} />
       <Route path="/" element={<MainPage />} />
+      <Route path="products" element={<ProductList />} />
       <Route path="MyData" element={<DataList />} />
       </Routes>
       </BrowserRouter>
