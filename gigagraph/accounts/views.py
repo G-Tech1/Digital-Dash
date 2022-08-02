@@ -13,7 +13,7 @@ from .models import User
 
 class AccountModelEncoder(ModelEncoder):
     model = User
-    properties = ["email", "first_name", "last_name"]
+    properties = ["email", "first_name", "last_name", "username"]
 
 
 class AccountInfoModelEncoder(ModelEncoder):

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class LogInForm extends React.Component {
     constructor(props) {
         super(props)
@@ -25,9 +25,10 @@ class LogInForm extends React.Component {
     const token = data.access
     localStorage.setItem('token', token)
     const res = await fetch('http://localhost:8000/accounts/accounts/')
-    const userList = await res.json()
+    const user = await res.json()
+    const userList = user.accounts
     for (let obj of userList) {
-        if (obj["username"] === this.state.username && obj["password"] === this.state.password) {
+        if (obj["username"] === this.state.username) {
             localStorage.setItem('email', obj["email"])
         }
     }
