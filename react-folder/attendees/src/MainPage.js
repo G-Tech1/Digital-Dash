@@ -32,7 +32,7 @@ function MainPage() {
             <p className="lead mb-4">A website where you can track and manage your network performance</p>
             <h3>Try our internet speed test below:</h3>
             <p>refresh the browser after each test</p>
-            <button type="button" class="btn btn-primary btn-lg" onClick={() => getLoadSpeed()
+            <button type="button" className="btn btn-primary btn-lg" onClick={() => getLoadSpeed()
             }>Start Internet Speed Test</button>
             <div>
             <h2>Total Internet Speed: {speed} Mbps</h2>

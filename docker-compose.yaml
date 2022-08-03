@@ -30,7 +30,7 @@ services:
       context: ./gigagraph
       dockerfile: ./dockerfile.dev
     ports:
-      - "8000:8000"
+      - "7000:8000"
     volumes:
       - ./gigagraph:/app
     depends_on:
