@@ -14,10 +14,10 @@ function Nav() {
             <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="montor/new">Bandwidth Monitor Tool</NavLink> 
+            <NavLink className="nav-link" to="products">Bandwidth Monitor Tool</NavLink> 
           </li>
           <li className="nav-item">
-              <NavLink className="nav-link" to="monitor/performance">My Monitor Performance</NavLink>
+              <NavLink className="nav-link" to="MyData">My Monitor Performance</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="accounts/login">Log In</NavLink>
