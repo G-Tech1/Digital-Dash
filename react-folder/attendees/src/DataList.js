@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './App.css'
 
 function DataList() {
   if (localStorage.getItem('token') === null) {
