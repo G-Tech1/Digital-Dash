@@ -15,4 +15,4 @@ class DataListEncoder(ModelEncoder):
         "user",
         "id"
     ]
-    # encoders = {"user": AccountModelEncoder}
+    encoders = {"user": AccountModelEncoder}

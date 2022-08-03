@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import dj_database_url
+import os
 from pathlib import Path
 from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,11 +29,45 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3001",
+]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3001",
+    "http://localhost:8000",
+    os.environ.get("CORS_HOST", "http://localhost:3001"),
+]
+
+CORS_ALLOW_CREDENTIALS = True
 # Application definition
+
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 INSTALLED_APPS = [
     'djwto',
+    'corsheaders',
     'accounts.apps.AccountsConfig',
     'data_miner.apps.DataMinerConfig',
     'django.contrib.admin',
@@ -43,6 +79,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

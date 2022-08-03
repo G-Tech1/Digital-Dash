@@ -43,7 +43,7 @@
 - switched data base from sqlite3 to postgreSQL. Tested to see if data could save in database. Success
 - added login functionality with jwt tokens
 - tomorrow will start to merge USER with session data model, test posting user/email as an aditional object within data miner.
-- Spent a great deal of time working/ troubleshooting and debuggin the YML file. Found new understanding for YML. Made some additions to [[databases]]
+- Spent a great deal of time working/ troubleshooting and debugging the YML file. Found new understanding for YML. Made some additions to [[databases]]
 
 ##### June 25, 2022
 

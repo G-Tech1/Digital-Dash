@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -33,8 +34,8 @@ class SignUpForm extends React.Component {
             method: "post",
             body: JSON.stringify(data),
             headers: {
-            'Content-Type': 'application/json',
-            },
+            'content-type': 'application/json',
+            }
         };
        const response = await fetch(signUpUrl, fetchConfig);
        if (response.ok) {

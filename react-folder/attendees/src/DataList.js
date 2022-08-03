@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
+import './App.css'
 
 function DataList() {
   if (localStorage.getItem('token') === null) {
     alert("Please sign in to view your network data")
     window.location.href = "login"
   }
-  let [dList, setDList] = useState({data: []})
-
-  async function fetchData() {
-    const res = await fetch('http://localhost:8000/data/', {
-        headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
-    }
-    const newDList = await res.json()
-    setDList(newDList)
+  let [dList, setDList] = useState({Data: []})
   useEffect(() => {fetchData()}, [])
-
+  async function fetchData() {
+    const res = await fetch('http://localhost:8000/data_miner/data/', {
+        headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+    const newDList = await res.json()
+    console.log(newDList)
+    setDList(newDList)
+  }
     return (
         <table className="table table-striped">
         <thead>
@@ -26,12 +26,12 @@ function DataList() {
           </tr>
         </thead>
         <tbody>
-        {dList.data.filter((x) => x["user"]["email"] === localStorage.getItem('email')).map(d => {
+        {dList.Data.filter((x) => x["user"]["email"] === localStorage.getItem('email')).map(d => {
         return (
        <tr key={d.id}>
          <td>{ d.day }</td>
          <td>{d.data_sent / d.session_time}</td>
-         <td>{d.date_received / d.session_time}</td>
+         <td>{d.data_received / d.session_time}</td>
          <td>{ d.session_time }</td>
        </tr>
           );
