@@ -35,8 +35,6 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
-    "http://localhost:8000",
-    os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 
 CORS_ALLOW_CREDENTIALS = True
