@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './App.css'
+import { FaLinkedin } from 'react-icons/fa';
+import './App.css';
 
 function MainPage() {
 
@@ -46,16 +47,16 @@ function MainPage() {
                 <h2>Total Internet Speed: {speed} Mbps</h2>
             </div>
 
-            <section id="cta" class="cta">
+            <section id="cta" className="cta">
                 <div class="container" data-aos="zoom-in">
 
-                    <div class="row">
-                        <div class="col-lg-9 text-center text-lg-start">
+                    <div className="row">
+                        <div className="col-lg-9 text-center text-lg-start">
                             <h3>Bandwidth Monitor Tool</h3>
                             <p> Download and use our bandwidth monitoring tool to analyze and keep track or your data usage today!</p>
                         </div>
-                        <div class="col-lg-3 cta-btn-container text-center">
-                            <a class="cta-btn align-middle" href="/products">Bandwidth Monitor Tool</a>
+                        <div className="col-lg-3 cta-btn-container text-center">
+                            <a className="cta-btn align-middle" href="/products">Bandwidth Monitor Tool</a>
                         </div>
                     </div>
 
@@ -79,7 +80,7 @@ function MainPage() {
                                     <span>Full Stack Engineer</span>
                                     {/* <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> */}
                                     <div className="social">
-                                        <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
+                                        <a href="https://www.linkedin.com/in/kervin-clenance-bb847a157/"> <FaLinkedin size={28} /> </a>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@ function MainPage() {
                                     <span>Full Stack Engineer</span>
                                     {/* <p>Aut maiores voluptates amet et quis praesentium qui senda para</p> */}
                                     <div className="social">
-                                        <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
+                                        <a href="https://www.linkedin.com/in/jacob-gordon-bb06ab227/"> <FaLinkedin size={28} /> </a>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +108,7 @@ function MainPage() {
                                     <span>Full Stack Engineer</span>
                                     {/* <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p> */}
                                     <div className="social">
-                                        <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
+                                        <a href="https://www.linkedin.com/in/keenan-nguyen/"> <FaLinkedin size={28} /> </a>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +122,7 @@ function MainPage() {
                                     <span>Full Stack Engineer</span>
                                     {/* <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p> */}
                                     <div className="social">
-                                        <a href="https://www.linkedin.com/in/gilan-serrant-1a6645111/"> <i className="ri-linkedin-box-fill"></i> </a>
+                                        <a href="https://www.linkedin.com/in/gilan-serrant-1a6645111/"> <FaLinkedin size={28}/></a>
                                     </div>
                                 </div>
                             </div>
