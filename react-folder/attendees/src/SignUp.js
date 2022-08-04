@@ -79,58 +79,42 @@ class SignUpForm extends React.Component {
     }
     render() {
     return (
-        <div className="my-5">
       <div className="row">
+      <div className="offset-3 col-5">
         <div className="col col-sm-auto">
           <img width="300" alt="" className="bg-white rounded shadow d-block mx-auto mb-4" src="/logo.svg" />
         </div>
-        <div className="col">
           <div className="card shadow">
             <div className="card-body">
               <form id="create-technician-form" onSubmit={this.handleSubmit}>
                 <h1 className="card-title">Sign Up</h1>
-                <div className="row">
-                  <div className="col">
                     <div className="form-floating mb-3">
                       <input required onChange={this.handleFirstNameChange} value={this.state.first_name} placeholder="First name" type="text" id="first_name" name="first_name" className="form-control" />
                       <label htmlFor="first_name">First name</label>
                     </div>
-                  </div>
-                  <div className="col">
                     <div className="form-floating mb-3">
                       <input required onChange={this.handleLastNameChange} value={this.state.last_name} placeholder="Last name" type="text" id="last_name" name="last_name" className="form-control" />
                       <label htmlFor="last_name">Last name</label>
                     </div>
-                  </div>
-                  <div className="col">
                     <div className="form-floating mb-3">
                       <input required onChange={this.handleEmailChange} value={this.state.email} placeholder="Email" type="email" id="email" name="email" className="form-control" />
                       <label htmlFor="email">Email</label>
                     </div>
-                  </div>
-                  <div className="col">
-                    <div className="form-floating mb-3">
-                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
-                      <label htmlFor="password">Password</label>
-                    </div>
-                  </div>
-                  <div className="col">
-                    <div className="form-floating mb-3">
-                      <input required onChange={this.handleConfirmPasswordChange} value={this.state.confirm_password} placeholder="Password" type="password" id="confirm_password" name="confirm_password" className="form-control" />
-                      <label htmlFor="confirm_password">Confirm Password</label>
-                    </div>
-                  </div>
-                  <div className="col">
                     <div className="form-floating mb-3">
                       <input required onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
                       <label htmlFor="username">Username</label>
                     </div>
-                  </div>
-                </div>
+                    <div className="form-floating mb-3">
+                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
+                      <label htmlFor="password">Password</label>
+                    </div>
+                    <div className="form-floating mb-3">
+                      <input required onChange={this.handleConfirmPasswordChange} value={this.state.confirm_password} placeholder="Password" type="password" id="confirm_password" name="confirm_password" className="form-control" />
+                      <label htmlFor="confirm_password">Confirm Password</label>
+                    </div>
                 <button className="btn btn-lg btn-primary">Register</button>
               </form>
             </div>
-          </div>
         </div>
       </div>
     </div>
