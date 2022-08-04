@@ -28,6 +28,10 @@ function MainPage() {
         setSpeed(((downloadSize / loadTime) * 10 ** (-5)).toFixed(2));
     }
 
+    const gilanPic = new URL('./media/profiles/gilan_pic.jpeg', import.meta.url)
+    const kervinPic = new URL('./media/profiles/kervin_pic.jpeg', import.meta.url)
+    const jacobPic = new URL('./media/profiles/jacob_pic.jpeg', import.meta.url)
+    const keenanPic = new URL('./media/profiles/keenan_pic.jpeg', import.meta.url)
 
     return (
         <div className="px-4 py-5 my-5 text-center">
@@ -69,7 +73,7 @@ function MainPage() {
 
                         <div className="col-lg-6">
                             <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-                                <div className="pic"></div>
+                                <div className="pic"><img src={kervinPic} className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Kervin Clenance</h4>
                                     <span>Full Stack Engineer</span>
@@ -83,7 +87,7 @@ function MainPage() {
 
                         <div className="col-lg-6 mt-4 mt-lg-0">
                             <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-                                <div className="pic"></div>
+                                <div className="pic"><img src={jacobPic} className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Jacob Gordon</h4>
                                     <span>Full Stack Engineer</span>
@@ -97,7 +101,7 @@ function MainPage() {
 
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-                                <div className="pic"></div>
+                                <div className="pic"><img src={keenanPic} className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Keenan Nguyen</h4>
                                     <span>Full Stack Engineer</span>
@@ -111,7 +115,7 @@ function MainPage() {
 
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-                                <div className="pic"><img src="media/profiles/gilan_pic.jpeg" className="img-fluid" alt="" /></div>
+                                <div className="pic"><img src={gilanPic} className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Gilan Serrant</h4>
                                     <span>Full Stack Engineer</span>

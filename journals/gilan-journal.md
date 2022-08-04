@@ -43,7 +43,7 @@
 - switched data base from sqlite3 to postgreSQL. Tested to see if data could save in database. Success
 - added login functionality with jwt tokens
 - tomorrow will start to merge USER with session data model, test posting user/email as an aditional object within data miner.
-- Spent a great deal of time working/ troubleshooting and debugging the YML file. Found new understanding for YML. Made some additions to [[databases]]
+- Spent a great deal of time working/ troubleshooting and debuggin the YML file. Found new understanding for YML. Made some additions to [[databases]]
 
 ##### June 25, 2022
 
@@ -56,3 +56,26 @@
 - Merging files, sharing back-end information with front end team
 - Databases work merging
 - Working with front end team in merging YAML file.
+
+##### June 27, 2022
+
+- Troubleshooting issues with addition of user foriegnkey model. Ran into issues of having no current instances of user. Will continue deeper testing when site is up and running in full.
+- will create user on browser then run data mining locally to test
+- adjusted session data model, removed auto now add for date
+- added date.today() function into data mining. added user as well. Still need debugging, will continue.
+
+##### August 2, 2022
+
+- Troubleshooting issues with getting all docker containers to work on windows. Database container kept exiting
+- learned windows need to change their EOL settomg from CRLF to LF in order for the files to run appropriately. This issue was prevalent in our create-multiple-databases.sh file.
+- ran into a cors issue with allowing cors headers. yet to be resolved.
+- started making changes to front end aesthetic.
+
+##### August 3, 2022
+
+- Able to fix cors issue
+- edited and updated data_mining.py file
+- brand change from giga graph to digital dash
+- updated ZIP file to download. Added readme with instructions on how to run the CLI app
+- Updated the main page with css. Added bandwidth monitor section and team members section. WPI
+-
