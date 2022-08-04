@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from "./MainPage";
 import Nav from "./Nav";
 import LogInForm from './Login';
-// import DataList from './DataList';
+import DataList from './DataList';
 import SignUpForm from './SignUp';
 import Graph from './Graph';
 import ProductList from './Products';
