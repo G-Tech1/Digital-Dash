@@ -18,3 +18,21 @@
 
 7/25
  - Started working on our product page. Began working on a feature to update sessiondata instances if one has already been created for the day, and create a new one if one has not been created for the day. this way total session data can be analyzed per day. 
+
+ 7/26
+ - The team ran into some issues with settin up our external volume and database most of the day was spent trying to troubleshoot this issue.
+
+ 7/27
+- Troubleshooting issues with addition of user foriegnkey model. Ran into issues of having no current instances of user. Will continue deeper testing when site is up and running in full.
+- will create user on browser then run data mining locally to test
+- adjusted session data model, removed auto now add for date
+- added date.today() function into data mining. added user as well. Still need debugging, will continue.
+
+7/28
+- Worked on making our cli bandwidth monitor downloadable on our UI. Did research on the topic to find a solution, but nothing has worked yet, will continue to try. Cleaned up the front end, added CORS and fixed a few bugs.
+
+8/1
+- Created a zip file with virtual env and requirements text for our bandwidth monitor. Successfully downloaded the zip file from our UI. MVP features have been completed.
+
+8/4
+- Created Unit tests for our features.
