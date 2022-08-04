@@ -18,13 +18,13 @@ function Nav() {
             <NavLink className="nav-link" to="products">Bandwidth Monitor Tool</NavLink> 
           </li>
           <li className="nav-item">
-              <NavLink className="nav-link" to="MyData">My Monitor Performance</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="accounts/login">Log In</NavLink>
+              <NavLink className="nav-link" to="MyData">My Performance</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="accounts/signup">Sign Up</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="accounts/login">Log In</NavLink>
           </li>
           <li className="nav-item">
               <NavLink className="nav-link" to="accounts/logout">Log Out</NavLink>
