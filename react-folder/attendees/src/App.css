@@ -1227,9 +1227,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: #eff2f8;
 }
 
@@ -1240,11 +1239,7 @@ section {
 }
 
 .team .member .social a:hover {
-  background: #47b2e4;
-}
-
-.team .member .social a:hover i {
-  color: #fff;
+  background: #FFFAE4;
 }
 
 .team .member .social a+a {
