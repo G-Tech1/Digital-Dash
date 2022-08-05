@@ -51,7 +51,7 @@ export default function Graph() {
             datasets: [
                 {
                     label: "Bandwidth usage",
-                    data: [420, 69],
+                    data: [26, 87],
                     borderColor: "rgb(69, 69, 69)",
                     backgroundColor: "#420420"
                 }
