@@ -5,21 +5,12 @@ import psutil
 from datetime import date
 
 
-print("Welcome to Digital Dash's Data Monitor")
 
-user = input("Please enter your Digital Dash email:\n")
-print("How long would you like to monitor your data for?")
-
-hours = input("hours?\n")
-minutes = input("minutes?\n")
-seconds = input("seconds?\n")
-
-set_time = int(hours)*3600 + int(minutes)*60 + int(seconds)
-print("Running Data Monitor for " + str(hours) + " hours " + str(minutes) + " minutes " + str(seconds) + " seconds.")
-
-
-def data_monitor(timer):
+def data_monitor(timer, user="empty"):
     
+    if user == "empty":
+        return "Enter an email address"
+
     API_ENDPOINT = "http://localhost:8000/data_miner/data/"
     
     running_time = 0
@@ -89,5 +80,23 @@ def data_monitor(timer):
 
     return [session_received, session_sent, session_total]
 
-  
-data_monitor(int(set_time))
+
+if __name__ == '__main__':
+    # your module-level code here
+    print("Welcome to Digital Dash's Data Monitor")
+
+    email = input("Please enter your Digital Dash email:\n")
+    print("How long would you like to monitor your data for?")
+
+    hours = input("hours?\n")
+    minutes = input("minutes?\n")
+    seconds = input("seconds?\n")
+
+    set_time = int(hours)*3600 + int(minutes)*60 + int(seconds)
+    print("Running Data Monitor for " + str(hours) + " hours " + str(minutes) + " minutes " + str(seconds) + " seconds.")
+
+    
+    data_monitor(int(set_time), email)
+
+
+
