@@ -2,10 +2,8 @@ function LogoutRedirect () {
     let token = localStorage.getItem('token')
     console.log(token)
     if (token === true) {
-        let token = '';
-        return token
+        return localStorage.setItem('token', null );
     }
-    console.log(token)
-    window.location.href = "login";
+    window.location.href = "login"
 }
 export default LogoutRedirect;

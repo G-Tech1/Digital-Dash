@@ -14,7 +14,6 @@ class TestDate(TestCase):
         result = encoder.default(input)
         self.assertEqual(result, date.today().isoformat())
 
-
 #Test case written by Gilan Serrant
 class TestDataMonitorUser(TestCase): # Tests empty user warning
     def test_data_monitor(self):
