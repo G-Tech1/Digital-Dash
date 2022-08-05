@@ -13,3 +13,11 @@ class TestDate(TestCase):
         encoder = DateEncoder()
         result = encoder.default(input)
         self.assertEqual(result, date.today().isoformat())
+
+#Test case written by Gilan Serrant
+class TestDataMonitorUser(TestCase): # Tests empty user warning
+    def test_data_monitor(self):
+        num = 0
+        result = data_monitor(num)
+        expected = "Enter an email address"
+        self.assertEqual(result, expected)
