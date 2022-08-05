@@ -8,7 +8,7 @@ import {
     Legend,
 } from 'chart.js'
 import { Bar } from "react-chartjs-2";
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 
 ChartJS.register(
     CategoryScale,
@@ -21,41 +21,59 @@ ChartJS.register(
 
 export default function Graph() {
 
-const [chartData, setChartData] = useState({
-    datasets: [],
-})
+    if (localStorage.getItem('token') === null) {
+        alert("Please sign in to view your network data")
+        window.location.href = "login"
+      }
+      let [dList, setDList] = useState({Data: []})
+      useEffect(() => {fetchData()}, [])
+      async function fetchData() {
+        const res = await fetch('http://localhost:8000/data_miner/data/', {
+            headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+        const newDList = await res.json()
+        console.log(newDList)
+        setDList(newDList)
+      }
 
-const [chartOptions, setChartOptions] = useState({});
+    const d = dList.Data.filter((x) => x["user"]["email"] === localStorage.getItem('email'))
 
-useEffect(() => {
-    setChartData({
-        labels: ["Upload", "Download"],
-        datasets: [
-            {
-                label: "Bandwidth usage",
-                data: [420, 69],
-                borderColor: "rgb(69, 69, 69)",
-                backgroundColor: "#420420"
-            }
-        ]
+    console.log(d)
+
+    const [chartData, setChartData] = useState({
+        datasets: [],
     })
-    setChartOptions({
-        responsive: true,
-        plugins: {
-            legend: {
-                position: "top"
-            },
-            title: {
-                display: true,
-                text: "Bandwidth Usage (for nerds)"
-            }
-        }
-    })
-}, [])
 
-  return (
-    <div>
-        <Bar options={chartOptions} data={chartData}/>
-    </div>
-  )
+    const [chartOptions, setChartOptions] = useState({});
+
+    useEffect(() => {
+        setChartData({
+            labels: ["Upload", "Download"],
+            datasets: [
+                {
+                    label: "Bandwidth usage",
+                    data: [420, 69],
+                    borderColor: "rgb(69, 69, 69)",
+                    backgroundColor: "#420420"
+                }
+            ]
+        })
+        setChartOptions({
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "top"
+                },
+                title: {
+                    display: true,
+                    text: "Bandwidth Usage (for nerds)"
+                }
+            }
+        })
+    }, [])
+
+    return (
+        <div>
+            <Bar options={chartOptions} data={chartData} />
+        </div>
+    )
 }

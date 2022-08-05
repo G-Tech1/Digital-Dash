@@ -39,6 +39,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     'djwto',
+    'corsheaders',
     'accounts.apps.AccountsConfig',
     'data_miner.apps.DataMinerConfig',
     'django.contrib.admin',
