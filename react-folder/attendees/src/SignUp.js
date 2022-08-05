@@ -13,12 +13,7 @@ class SignUpForm extends React.Component {
             username: ''
 
           };
-        this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-        this.handleLastNameChange = this.handleLastNameChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-        this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     async handleSubmit(event) {
@@ -53,30 +48,13 @@ class SignUpForm extends React.Component {
           window.location.href = "login"
        }
        }
-    handleFirstNameChange(event) {
-        const value = event.target.value;
-        this.setState({first_name: value})
+
+    handleChange(event) {
+        const newState = {};
+        newState[event.target.id] = event.target.value;
+        this.setState(newState);
       }
-    handleLastNameChange(event) {
-        const value = event.target.value;
-        this.setState({last_name: value})
-    }
-    handleEmailChange(event) {
-        const value = event.target.value;
-        this.setState({email: value})
-    }
-    handlePasswordChange(event) {
-        const value = event.target.value;
-        this.setState({password: value})
-    }
-    handleConfirmPasswordChange(event) {
-        const value = event.target.value;
-        this.setState({confirm_password: value})
-    }
-    handleUsernameChange(event) {
-        const value = event.target.value;
-        this.setState({username: value})
-    }
+
     render() {
     return (
       <div className="row">
@@ -89,27 +67,27 @@ class SignUpForm extends React.Component {
               <form id="create-technician-form" onSubmit={this.handleSubmit}>
                 <h1 className="card-title">Sign Up</h1>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleFirstNameChange} value={this.state.first_name} placeholder="First name" type="text" id="first_name" name="first_name" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.first_name} placeholder="First name" type="text" id="first_name" name="first_name" className="form-control" />
                       <label htmlFor="first_name">First name</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleLastNameChange} value={this.state.last_name} placeholder="Last name" type="text" id="last_name" name="last_name" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.last_name} placeholder="Last name" type="text" id="last_name" name="last_name" className="form-control" />
                       <label htmlFor="last_name">Last name</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleEmailChange} value={this.state.email} placeholder="Email" type="email" id="email" name="email" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.email} placeholder="Email" type="email" id="email" name="email" className="form-control" />
                       <label htmlFor="email">Email</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
                       <label htmlFor="username">Username</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
                       <label htmlFor="password">Password</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleConfirmPasswordChange} value={this.state.confirm_password} placeholder="Password" type="password" id="confirm_password" name="confirm_password" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.confirm_password} placeholder="Password" type="password" id="confirm_password" name="confirm_password" className="form-control" />
                       <label htmlFor="confirm_password">Confirm Password</label>
                     </div>
                 <button className="btn btn-lg btn-primary">Register</button>

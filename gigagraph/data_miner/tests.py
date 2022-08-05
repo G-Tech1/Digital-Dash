@@ -4,9 +4,10 @@ from datetime import date
 from .data_mining import data_monitor
 
 from .common.json import DateEncoder
+
 # Create your tests here.
 
-#Test case written by Kervin Clenance
+# Test case written by Kervin Clenance
 class TestDate(TestCase):
     def test_date_encoder(self):
         input = date.today()
@@ -14,8 +15,9 @@ class TestDate(TestCase):
         result = encoder.default(input)
         self.assertEqual(result, date.today().isoformat())
 
-#Test case written by Gilan Serrant
-class TestDataMonitorUser(TestCase): # Tests empty user warning
+
+# Test case written by Gilan Serrant
+class TestDataMonitorUser(TestCase):  # Tests empty user warning
     def test_data_monitor(self):
         num = 0
         result = data_monitor(num)

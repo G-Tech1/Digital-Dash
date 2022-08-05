@@ -11,7 +11,7 @@ class TestCreateUser(TestCase):
             "last_name": "Last",
             "username": "exampleuser",
             "password": "",
-            }
+        }
 
         result = create_user(ex_json_content)
 
@@ -23,5 +23,5 @@ class TestCreateUser(TestCase):
         #     "username": "exampleuser",
         #     "password": "PSut19*@",
         #     }
-        
+
         self.assertEqual(result, expected)
