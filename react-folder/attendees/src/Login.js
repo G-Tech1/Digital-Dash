@@ -38,7 +38,7 @@ class LogInForm extends React.Component {
   handleChange(event) {
     const newState = {};
     newState[event.target.id] = event.target.value;
-    this.setState({ newState });
+    this.setState(newState);
   }
 
   render() {
