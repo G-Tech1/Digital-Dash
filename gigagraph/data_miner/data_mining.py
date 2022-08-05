@@ -1,18 +1,17 @@
-import requests # importing the requests library
+import requests  # importing the requests library
 import json
 import time
 import psutil
 from datetime import date
 
 
-
 def data_monitor(timer, user="empty"):
-    
+
     if user == "empty":
         return "Enter an email address"
 
     API_ENDPOINT = "http://localhost:8000/data_miner/data/"
-    
+
     running_time = 0
 
     last_received = psutil.net_io_counters().bytes_recv
@@ -42,16 +41,18 @@ def data_monitor(timer, user="empty"):
         last_sent = bytes_sent
         last_total = bytes_total
 
-        ## added daily feature 
-        
+        ## added daily feature
+
         session_received += mb_new_received
         session_sent += mb_new_sent
         session_total = session_sent + session_received
 
-        print(f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB session total")
-        
-        running_time +=1
-        
+        print(
+            f"{mb_new_received:.2f} MB received, {mb_new_sent:.2f} MB sent, {mb_new_total:.2f} MB total, {session_total:.2f} MB session total"
+        )
+
+        running_time += 1
+
         if running_time == timer:
             running = False
 
@@ -60,18 +61,18 @@ def data_monitor(timer, user="empty"):
     todays_date = str(date.today())
 
     data = {
-    "user": user,
-    "day": todays_date,
-    "session_time": timer,
-	"data_sent": round(session_sent, 2),
-	"data_received": round(session_received, 2),
-	"data_total": round(session_total, 2)
+        "user": user,
+        "day": todays_date,
+        "session_time": timer,
+        "data_sent": round(session_sent, 2),
+        "data_received": round(session_received, 2),
+        "data_total": round(session_total, 2),
     }
-    
+
     # sending post request and saving response as response object
-    r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
-  
-    # extracting response text 
+    r = requests.post(url=API_ENDPOINT, data=json.dumps(data))
+
+    # extracting response text
     test_url = r.text
 
     summary = f"{session_received:.2f} MB received, {session_sent:.2f} MB sent, {session_total:.2f} MB total"
@@ -83,7 +84,7 @@ def data_monitor(timer, user="empty"):
     return [session_received, session_sent, session_total]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # your module-level code here
     print("Welcome to Digital Dash's Data Monitor")
 
@@ -94,11 +95,15 @@ if __name__ == '__main__':
     minutes = input("minutes?\n")
     seconds = input("seconds?\n")
 
-    set_time = int(hours)*3600 + int(minutes)*60 + int(seconds)
-    print("Running Data Monitor for " + str(hours) + " hours " + str(minutes) + " minutes " + str(seconds) + " seconds.")
+    set_time = int(hours) * 3600 + int(minutes) * 60 + int(seconds)
+    print(
+        "Running Data Monitor for "
+        + str(hours)
+        + " hours "
+        + str(minutes)
+        + " minutes "
+        + str(seconds)
+        + " seconds."
+    )
 
-    
     data_monitor(int(set_time), email)
-
-
-

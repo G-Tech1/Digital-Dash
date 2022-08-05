@@ -7,8 +7,7 @@ class LogInForm extends React.Component {
             password: '',
             username: ''
           };
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     async handleSubmit(event) {
@@ -36,14 +35,12 @@ class LogInForm extends React.Component {
     }
     // DO SOMETHING WITH THE ERROR, IF YOU WANT
        }
-    handlePasswordChange(event) {
-        const value = event.target.value;
-        this.setState({password: value})
+    handleChange(event) {
+        const newState = {}
+        newState[event.target.id] = event.target.value;
+        this.setState({newState})
     }
-    handleUsernameChange(event) {
-        const value = event.target.value;
-        this.setState({username: value})
-    }
+
     render() {
     return (
       <div className="row">
@@ -56,11 +53,11 @@ class LogInForm extends React.Component {
               <form id="create-technician-form" onSubmit={this.handleSubmit}>
                 <h1 className="card-title">Log In</h1>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
                       <label htmlFor="username">Username</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
+                      <input required onChange={this.handleChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
                       <label htmlFor="password">Password</label>
                     </div>
                 <button className="btn btn-lg btn-primary">Log In</button>

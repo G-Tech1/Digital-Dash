@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('data_miner', '0001_initial'),
+        ("data_miner", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='DailyData',
-            new_name='SessionData',
+            old_name="DailyData",
+            new_name="SessionData",
         ),
     ]
