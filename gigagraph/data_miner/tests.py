@@ -12,3 +12,5 @@ class TestDate(TestCase):
         encoder = DateEncoder()
         result = encoder.default(input)
         self.assertEqual(result, date.today().isoformat())
+
+
