@@ -78,4 +78,10 @@
 - brand change from giga graph to digital dash
 - updated ZIP file to download. Added readme with instructions on how to run the CLI app
 - Updated the main page with css. Added bandwidth monitor section and team members section. WPI
--
+
+##### August 4, 2022
+
+- Finalizing front-end edits. Fixed team section to show linkedin links appropriately.
+- Updated the aesthetic of the sign up and login page.
+- Research Unit testing and began implementation.
+- create a unit test for the data miner app. tests empty user warning.
