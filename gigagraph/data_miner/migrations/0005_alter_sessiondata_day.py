@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('data_miner', '0004_sessiondata_user_alter_sessiondata_session_time'),
+        ("data_miner", "0004_sessiondata_user_alter_sessiondata_session_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='sessiondata',
-            name='day',
+            model_name="sessiondata",
+            name="day",
             field=models.DateField(),
         ),
     ]

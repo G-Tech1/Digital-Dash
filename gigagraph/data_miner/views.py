@@ -40,4 +40,3 @@ def api_data(request):
             encoder=DataListEncoder,
             safe=False,
         )
-

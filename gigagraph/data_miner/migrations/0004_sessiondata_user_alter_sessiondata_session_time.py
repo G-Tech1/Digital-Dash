@@ -9,18 +9,23 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('data_miner', '0003_sessiondata_session_time'),
+        ("data_miner", "0003_sessiondata_session_time"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='sessiondata',
-            name='user',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='session_data', to=settings.AUTH_USER_MODEL),
+            model_name="sessiondata",
+            name="user",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="session_data",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AlterField(
-            model_name='sessiondata',
-            name='session_time',
+            model_name="sessiondata",
+            name="session_time",
             field=models.PositiveIntegerField(null=True),
         ),
     ]

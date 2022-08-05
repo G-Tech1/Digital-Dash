@@ -9,5 +9,5 @@ urlpatterns = [
         api_account_detail,
         name="api_account_detail",
     ),
-    path("api/tokens/mine/", api_user_token, name="api_user_token")
+    path("api/tokens/mine/", api_user_token, name="api_user_token"),
 ]
