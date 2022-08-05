@@ -57,9 +57,11 @@ def data_monitor(timer, user="empty"):
 
         time.sleep(1)
 
+    todays_date = str(date.today())
+
     data = {
     "user": user,
-    "day": date.today(),
+    "day": todays_date,
     "session_time": timer,
 	"data_sent": round(session_sent, 2),
 	"data_received": round(session_received, 2),
