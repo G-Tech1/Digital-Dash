@@ -46,38 +46,30 @@ class LogInForm extends React.Component {
     }
     render() {
     return (
-        <div className="my-5">
       <div className="row">
+      <div className="offset-3 col-5">
         <div className="col col-sm-auto">
           <img width="300" alt="" className="bg-white rounded shadow d-block mx-auto mb-4" src="/logo.svg" />
         </div>
-        <div className="col">
           <div className="card shadow">
             <div className="card-body">
               <form id="create-technician-form" onSubmit={this.handleSubmit}>
                 <h1 className="card-title">Log In</h1>
-                <div className="row">
-                  <div className="col">
-                    <div className="form-floating mb-3">
-                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
-                      <label htmlFor="password">Password</label>
-                    </div>
-                  </div>
-                  <div className="col">
                     <div className="form-floating mb-3">
                       <input required onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username" type="text" id="username" name="username" className="form-control" />
                       <label htmlFor="username">Username</label>
                     </div>
-                  </div>
-                </div>
+                    <div className="form-floating mb-3">
+                      <input required onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" type="password" id="password" name="password" className="form-control" />
+                      <label htmlFor="password">Password</label>
+                    </div>
                 <button className="btn btn-lg btn-primary">Log In</button>
               </form>
-              <p>Don't have an account?<Link to='signup'>Sign Up here!</Link></p>
+              <p>Don't have an account? <Link to='/accounts/signup'>Sign Up here!</Link></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
     )
 }
 }

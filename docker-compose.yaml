@@ -19,7 +19,7 @@ services:
     image: postgres:14.2-bullseye
     volumes:
       - dash-data:/var/lib/postgresql/data
-      - ./db:/docker-entrypoint-initdb.d
+      - ./db:/docker-entrypoint-initdb.d 
     environment:
       - POSTGRES_MULTIPLE_DATABASES=gigagraph
       - POSTGRES_PASSWORD=dash
@@ -30,7 +30,7 @@ services:
       context: ./gigagraph
       dockerfile: ./dockerfile.dev
     ports:
-      - "7000:8000"
+      - "8000:8000"
     volumes:
       - ./gigagraph:/app
     depends_on:

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './App.css'
 
 function DataList() {
   if (localStorage.getItem('token') === null) {
@@ -29,9 +30,9 @@ function DataList() {
         return (
        <tr key={d.id}>
          <td>{ d.day }</td>
-         <td>{d.data_sent / d.session_time}</td>
-         <td>{d.data_received / d.session_time}</td>
-         <td>{ d.session_time }</td>
+         <td>{(d.data_sent / d.session_time).toFixed(3)} MB</td>
+         <td>{(d.data_received / d.session_time).toFixed(3)} MB</td>
+         <td>{ d.session_time } Seconds</td>
        </tr>
           );
            })}

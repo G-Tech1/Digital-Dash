@@ -56,3 +56,32 @@
 - Merging files, sharing back-end information with front end team
 - Databases work merging
 - Working with front end team in merging YAML file.
+
+##### June 27, 2022
+
+- Troubleshooting issues with addition of user foriegnkey model. Ran into issues of having no current instances of user. Will continue deeper testing when site is up and running in full.
+- will create user on browser then run data mining locally to test
+- adjusted session data model, removed auto now add for date
+- added date.today() function into data mining. added user as well. Still need debugging, will continue.
+
+##### August 2, 2022
+
+- Troubleshooting issues with getting all docker containers to work on windows. Database container kept exiting
+- learned windows need to change their EOL settomg from CRLF to LF in order for the files to run appropriately. This issue was prevalent in our create-multiple-databases.sh file.
+- ran into a cors issue with allowing cors headers. yet to be resolved.
+- started making changes to front end aesthetic.
+
+##### August 3, 2022
+
+- Able to fix cors issue
+- edited and updated data_mining.py file
+- brand change from giga graph to digital dash
+- updated ZIP file to download. Added readme with instructions on how to run the CLI app
+- Updated the main page with css. Added bandwidth monitor section and team members section. WPI
+
+##### August 4, 2022
+
+- Finalizing front-end edits. Fixed team section to show linkedin links appropriately.
+- Updated the aesthetic of the sign up and login page.
+- Research Unit testing and began implementation.
+- create a unit test for the data miner app. tests empty user warning.

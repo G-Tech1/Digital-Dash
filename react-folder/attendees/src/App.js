@@ -6,6 +6,8 @@ import DataList from './DataList';
 import SignUpForm from './SignUp';
 import Graph from './Graph';
 import ProductList from './Products';
+import LogoutRedirect from './Logout';
+
 function App() {
   return (
       <BrowserRouter>
@@ -13,8 +15,8 @@ function App() {
       <Routes>
       <Route path="accounts/login" element={<LogInForm />} />
       <Route path="accounts/signup" element={<SignUpForm />} />
+      <Route path="accounts/logout" element={<LogoutRedirect />} />
       <Route path="/" element={<MainPage />} />
-      <Route path="MyData" element={<DataList />} />
       <Route path="graph/" element={<Graph />} />
       <Route path="products" element={<ProductList />} />
       <Route path="MyData" element={<DataList />} />
