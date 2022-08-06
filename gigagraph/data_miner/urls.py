@@ -7,5 +7,4 @@ urlpatterns = [
         api_data,
         name="api_data",
     ),
-    
 ]

@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('data_miner', '0002_rename_dailydata_sessiondata'),
+        ("data_miner", "0002_rename_dailydata_sessiondata"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='sessiondata',
-            name='session_time',
+            model_name="sessiondata",
+            name="session_time",
             field=models.IntegerField(null=True),
         ),
     ]

@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='DailyData',
+            name="DailyData",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('day', models.DateField(auto_now_add=True)),
-                ('data_sent', models.FloatField()),
-                ('data_received', models.FloatField()),
-                ('data_total', models.FloatField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("day", models.DateField(auto_now_add=True)),
+                ("data_sent", models.FloatField()),
+                ("data_received", models.FloatField()),
+                ("data_total", models.FloatField()),
             ],
         ),
     ]
