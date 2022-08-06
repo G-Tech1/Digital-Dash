@@ -23,9 +23,10 @@ class TestDataMonitorUser(TestCase):  # Tests empty user warning
         result = data_monitor(num)
         expected = "Enter an email address"
         self.assertEqual(result, expected)
-<<<<<<< HEAD
 
-#Test case written by Keenan Nguyen
+
+# Test case written by Keenan Nguyen
+
 
 class TestGetData(TestCase):
     def test_data_encoder(self):
@@ -40,5 +41,3 @@ class TestGetData(TestCase):
         encoder = DataListEncoder()
         result = encoder.default(input)
         self.assertEqual(result)
-=======
->>>>>>> b5f01b4afdc2ed9072b606db3ad39b113283acd3
