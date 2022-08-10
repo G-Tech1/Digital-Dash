@@ -69,4 +69,7 @@
 
 - React router for logout function
 - updated journal
+- Create a unit test for create user, but having 
+  trouble doing so
+- 
 

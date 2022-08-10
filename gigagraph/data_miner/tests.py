@@ -2,7 +2,7 @@ from django.test import TestCase
 import json
 from datetime import date
 from .data_mining import data_monitor
-
+from encoders import DataListEncoder
 from .common.json import DateEncoder
 
 # Create your tests here.
@@ -23,3 +23,21 @@ class TestDataMonitorUser(TestCase):  # Tests empty user warning
         result = data_monitor(num)
         expected = "Enter an email address"
         self.assertEqual(result, expected)
+
+
+# Test case written by Keenan Nguyen
+
+
+class TestGetData(TestCase):
+    def test_data_encoder(self):
+        input = {
+            "day": "2022, 08, 05",
+            "session_time": "6",
+            "data_received": "24.13",
+            "data_sent": "24.78",
+            "data_total": "137.42",
+            "user": "User",
+        }
+        encoder = DataListEncoder()
+        result = encoder.default(input)
+        self.assertEqual(result)
