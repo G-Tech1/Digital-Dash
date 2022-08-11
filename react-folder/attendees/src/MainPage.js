@@ -27,6 +27,7 @@ function MainPage() {
     let loadTime = await LoadImage();
     console.log(downloadSize / loadTime);
     setSpeed(((downloadSize / loadTime) * 10 ** -5).toFixed(2));
+    return ((downloadSize / loadTime) * 10 ** -5).toFixed(2)
   }
 
   const gilanPic = new URL("./media/profiles/gilan_pic.jpeg", import.meta.url);
@@ -47,11 +48,10 @@ function MainPage() {
         A website where you can track and manage your network performance
       </p>
       <h3>Try our internet speed test below:</h3>
-      <p>refresh the browser after each test</p>
       <button
         type="button"
         className="btn btn-primary btn-lg"
-        onClick={() => getLoadSpeed()}
+        onClick={async function() { for (var i = 0; i < 5; i++) {await getLoadSpeed()}}}
       >
         Start Internet Speed Test
       </button>
@@ -60,7 +60,7 @@ function MainPage() {
       </div>
 
       <section id="cta" className="cta">
-        <div class="container" data-aos="zoom-in">
+        <div className="container" data-aos="zoom-in">
           <div className="row">
             <div className="col-lg-9 text-center text-lg-start">
               <h3>Bandwidth Monitor Tool</h3>

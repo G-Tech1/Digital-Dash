@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function DataList() {
-  if (localStorage.getItem("token") === null) {
+  if (!localStorage.getItem("token") || localStorage.getItem("token") === "null") {
     alert("Please sign in to view your network data");
-    window.location.href = "login";
+    window.location.href = "accounts/login";
   }
   let [dList, setDList] = useState({ Data: [] });
   useEffect(() => {
     fetchData();
   }, []);
   async function fetchData() {
-    const res = await fetch("http://localhost:8000/data_miner/data/", {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    });
+    const res = await fetch("http://localhost:8000/data_miner/data/");
+    if (!res.ok) {
+      alert("Please sign in to view your network data");
+    window.location.href = "accounts/login";
+    }
     const newDList = await res.json();
     console.log(newDList);
     setDList(newDList);

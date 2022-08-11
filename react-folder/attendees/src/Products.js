@@ -1,9 +1,10 @@
 import data_miner from "./data_monitor.zip";
 
 function ProductList() {
-  if (localStorage.getItem("token") == null) {
+  let token = localStorage.getItem("token")
+  if (token === "null") {
     alert("Please login in order to access our performance monitoring tools");
-    window.location.href = "login";
+    window.location.href = "accounts/login";
   }
 
   return (
