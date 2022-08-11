@@ -49,8 +49,9 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+  font-family: "Trebuchet MS", "Arial", "Helvetica", sans-serif;
+  color: #1e1e1e;
+  background-image: url(https://unbounce.com/photos/Gradient-Background.png);
 }
 
 a {
