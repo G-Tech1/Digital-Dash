@@ -16,6 +16,12 @@ Our application was made for People who want a more interactive display and more
 
 For Window Users who clone the application and run into a fatal databse error, change CRLF to LF (db/create-multiple-databases.sh)
 
+Also, in order to proceed from cloning the project, creating a volume for the database is necessary. One can do this from creating a volume through docker cli or thorugh the terminal with this command;
+
+docker volume create "dash-data"
+
+This would create a volume named "dash-data" in docker-desktop application. 
+
 
 ## Installation
 
