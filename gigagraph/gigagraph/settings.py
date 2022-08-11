@@ -13,7 +13,7 @@ import dj_database_url
 import os
 from pathlib import Path
 from datetime import timedelta
-import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -169,5 +169,3 @@ DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
 # Your DEBUG value MUST be False in production
 DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 
-# Configure Django App for Heroku.
-django_heroku.settings(locals())
