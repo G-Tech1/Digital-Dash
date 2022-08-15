@@ -5,7 +5,7 @@
 * [GHI](docs/ghi.md)
 * [Integrations](docs/integrations.md)
 
-A Bandwidth Monitor that keeps track users data usage(sent and received) as you browse the internet.
+A network performance management website which includes a newtwork speed test and a downloadable bandwidth monitor that keeps track users data usage(upload and download) as you browse the internet.
 
 
 ## Intended Market
