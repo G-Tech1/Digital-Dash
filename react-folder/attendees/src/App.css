@@ -48,10 +48,16 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: "Trebuchet MS", "Arial", "Helvetica", sans-serif;
   color: #1e1e1e;
-  background-image: url(https://unbounce.com/photos/Gradient-Background.png);
+  background: url(https://unbounce.com/photos/Gradient-Background.png) no-repeat center center fixed; 
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
+  background-size: cover;
+
 }
 
 a {
