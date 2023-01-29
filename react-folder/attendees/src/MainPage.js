@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { FaLinkedin } from "react-icons/fa";
-import "./App.css";
+import { useState } from 'react';
+import { FaLinkedin } from 'react-icons/fa';
+import './App.css';
 
 function MainPage() {
-  let [speed, setSpeed] = useState("");
+  let [speed, setSpeed] = useState('');
   var imageAddr =
-    "https://images.pexels.com/photos/12066797/pexels-photo-12066797.jpeg?";
+    'https://images.pexels.com/photos/12066797/pexels-photo-12066797.jpeg?';
   var downloadSize = 38065152;
 
   function LoadImage() {
@@ -27,19 +27,20 @@ function MainPage() {
     let loadTime = await LoadImage();
     console.log(downloadSize / loadTime);
     setSpeed(((downloadSize / loadTime) * 10 ** -5).toFixed(2));
-    return ((downloadSize / loadTime) * 10 ** -5).toFixed(2)
+    return ((downloadSize / loadTime) * 10 ** -5).toFixed(2);
   }
 
-  const gilanPic = new URL("./media/profiles/gilan_pic.jpeg", import.meta.url);
+  const gilanPic = new URL('./media/profiles/gilan_pic.jpeg', import.meta.url);
   const kervinPic = new URL(
-    "./media/profiles/kervin_pic.jpeg",
+    './media/profiles/kervin_pic.jpeg',
     import.meta.url
   );
-  const jacobPic = new URL("./media/profiles/jacob_pic.jpeg", import.meta.url);
+  const jacobPic = new URL('./media/profiles/jacob_pic.jpeg', import.meta.url);
   const keenanPic = new URL(
-    "./media/profiles/keenan_pic.jpeg",
+    './media/profiles/keenan_pic.jpeg',
     import.meta.url
   );
+  const bandwidthPic = new URL('./media/images/bandwidth.png', import.meta.url);
 
   return (
     <div className="px-4 py-5 my-5 text-center">
@@ -50,8 +51,12 @@ function MainPage() {
       <h3>Try our internet speed test below:</h3>
       <button
         type="button"
-        className="btn btn-primary btn-lg"
-        onClick={async function() { for (var i = 0; i < 5; i++) {await getLoadSpeed()}}}
+        className="btn btn-light btn-lg"
+        onClick={async function () {
+          for (var i = 0; i < 5; i++) {
+            await getLoadSpeed();
+          }
+        }}
       >
         Start Internet Speed Test
       </button>
@@ -65,9 +70,10 @@ function MainPage() {
             <div className="col-lg-9 text-center text-lg-start">
               <h3>Bandwidth Monitor Tool</h3>
               <p>
-                {" "}
+                {' '}
                 Download and use our bandwidth monitoring tool to analyze and
                 keep track or your data usage today!
+                <img src={bandwidthPic} alt="bandwidth2" />
               </p>
             </div>
             <div className="col-lg-3 cta-btn-container text-center">
@@ -101,8 +107,8 @@ function MainPage() {
                   {/* <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> */}
                   <div className="social">
                     <a href="https://www.linkedin.com/in/kervin-clenance-bb847a157/">
-                      {" "}
-                      <FaLinkedin size={28} />{" "}
+                      {' '}
+                      <FaLinkedin size={28} />{' '}
                     </a>
                   </div>
                 </div>
@@ -124,8 +130,8 @@ function MainPage() {
                   {/* <p>Aut maiores voluptates amet et quis praesentium qui senda para</p> */}
                   <div className="social">
                     <a href="https://www.linkedin.com/in/jacob-gordon-bb06ab227/">
-                      {" "}
-                      <FaLinkedin size={28} />{" "}
+                      {' '}
+                      <FaLinkedin size={28} />{' '}
                     </a>
                   </div>
                 </div>
@@ -147,8 +153,8 @@ function MainPage() {
                   {/* <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p> */}
                   <div className="social">
                     <a href="https://www.linkedin.com/in/keenan-nguyen/">
-                      {" "}
-                      <FaLinkedin size={28} />{" "}
+                      {' '}
+                      <FaLinkedin size={28} />{' '}
                     </a>
                   </div>
                 </div>
@@ -170,7 +176,7 @@ function MainPage() {
                   {/* <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p> */}
                   <div className="social">
                     <a href="https://www.linkedin.com/in/gilan-serrant-1a6645111/">
-                      {" "}
+                      {' '}
                       <FaLinkedin size={28} />
                     </a>
                   </div>
@@ -183,7 +189,7 @@ function MainPage() {
       <footer>
         <div className="container footer-bottom clearfix">
           <div className="copyright">
-            &copy; Copyright{" "}
+            &copy; Copyright{' '}
             <strong>
               <span>Digital Dash</span>
             </strong>

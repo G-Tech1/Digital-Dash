@@ -37,7 +37,6 @@
   }
 }
 
-
 /**
 * Template Name: Arsha - v4.8.0
 * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
@@ -50,14 +49,14 @@
 --------------------------------------------------------------*/
 
 body {
-  font-family: "Trebuchet MS", "Arial", "Helvetica", sans-serif;
+  font-family: 'Trebuchet MS', 'Arial', 'Helvetica', sans-serif;
   color: #1e1e1e;
-  background: url(https://unbounce.com/photos/Gradient-Background.png) no-repeat center center fixed; 
+  background: url(https://unbounce.com/photos/Gradient-Background.png) no-repeat
+    center center fixed;
   /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; */
   background-size: cover;
-
 }
 
 a {
@@ -76,7 +75,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -94,7 +93,7 @@ h6 {
 }
 
 #preloader:before {
-  content: "";
+  content: '';
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -199,7 +198,7 @@ h6 {
 /**
 * Desktop Navigation 
 */
-.navbar {
+/* .navbar {
   padding: 0;
 }
 
@@ -213,6 +212,26 @@ h6 {
 
 .navbar li {
   position: relative;
+} */
+
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .navbar a,
@@ -238,7 +257,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   color: #47b2e4;
 }
 
@@ -293,11 +312,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
   color: #47b2e4;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -309,7 +328,7 @@ h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -321,7 +340,7 @@ h6 {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
@@ -393,7 +412,7 @@ h6 {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
   color: #47b2e4;
 }
 
@@ -429,11 +448,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
   color: #47b2e4;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
@@ -465,7 +484,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -604,7 +623,7 @@ section {
 }
 
 .section-title h2::before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 120px;
@@ -615,7 +634,7 @@ section {
 }
 
 .section-title h2::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 40px;
@@ -674,7 +693,7 @@ section {
   position: relative;
 }
 
-.about .content ul li+li {
+.about .content ul li + li {
   margin-top: 10px;
 }
 
@@ -692,7 +711,7 @@ section {
 }
 
 .about .content .btn-learn-more {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -753,7 +772,7 @@ section {
   list-style: none;
 }
 
-.why-us .accordion-list li+li {
+.why-us .accordion-list li + li {
   margin-top: 15px;
 }
 
@@ -766,7 +785,7 @@ section {
 .why-us .accordion-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -815,7 +834,6 @@ section {
 }
 
 @media (max-width: 1024px) {
-
   .why-us .content,
   .why-us .accordion-list {
     padding-left: 0;
@@ -850,7 +868,7 @@ section {
   font-weight: 700;
   font-size: 32px;
   color: #37517e;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .skills .content ul {
@@ -885,7 +903,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #37517e;
 }
 
@@ -955,23 +973,33 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9));
+  background: linear-gradient(
+    rgba(240, 241, 244, 0.9),
+    rgba(125, 155, 213, 0.9)
+  );
   background-size: cover;
-  padding: 120px 0;
+  padding: 80px 0;
+  margin: 100px 0;
+  border-radius: 50px;
+}
+
+.cta img {
+  width: 30%;
+  margin-top: 50px;
 }
 
 .cta h3 {
-  color: #fff;
+  color: #000;
   font-size: 28px;
   font-weight: 700;
 }
 
 .cta p {
-  color: #fff;
+  color: #000;
 }
 
 .cta .cta-btn {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -980,8 +1008,8 @@ section {
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #000;
+  color: #000;
 }
 
 .cta .cta-btn:hover {
@@ -992,6 +1020,14 @@ section {
 @media (max-width: 1024px) {
   .cta {
     background-attachment: scroll;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cta {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -1022,7 +1058,7 @@ section {
   transition: all 0.3s;
   padding: 8px 20px;
   border-radius: 50px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .portfolio #portfolio-flters li:hover,
@@ -1112,7 +1148,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1120,7 +1159,10 @@ section {
   border: 1px solid #47b2e4;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #47b2e4;
 }
 
@@ -1143,7 +1185,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1164,11 +1206,19 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.team {
+  border-radius: 50px;
+  background: linear-gradient(
+    rgba(240, 241, 244, 0.9),
+    rgba(125, 155, 213, 0.9)
+  );
+}
+
 .team .member {
   position: relative;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 30px;
   background: #fff;
   transition: 0.5s;
 }
@@ -1207,7 +1257,7 @@ section {
 }
 
 .team .member span::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   width: 50px;
@@ -1246,11 +1296,19 @@ section {
 }
 
 .team .member .social a:hover {
-  background: #FFFAE4;
+  background: #fffae4;
 }
 
-.team .member .social a+a {
+.team .member .social a + a {
   margin-left: 8px;
+}
+
+@media (min-width: 1440px) {
+  .team {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1280,7 +1338,7 @@ section {
   font-size: 48px;
   color: #37517e;
   font-weight: 400;
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   margin-bottom: 25px;
 }
 
@@ -1335,7 +1393,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 500;
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   transition: 0.3s;
   border: 1px solid #47b2e4;
 }
@@ -1391,7 +1449,7 @@ section {
   list-style: none;
 }
 
-.faq .faq-list li+li {
+.faq .faq-list li + li {
   margin-top: 15px;
 }
 
@@ -1405,7 +1463,7 @@ section {
 .faq .faq-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -1568,7 +1626,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1589,7 +1647,7 @@ section {
 }
 
 .contact .php-email-form .loading:before {
-  content: "";
+  content: '';
   display: inline-block;
   border-radius: 50%;
   width: 24px;
@@ -1630,7 +1688,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type='submit'] {
   background: #47b2e4;
   border: 0;
   padding: 12px 34px;
@@ -1639,7 +1697,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type='submit']:hover {
   background: #209dd8;
 }
 
@@ -1694,15 +1752,15 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #4668a2;
-  content: "/";
+  content: '/';
 }
 
 /*--------------------------------------------------------------
@@ -1740,13 +1798,13 @@ section {
   text-align: left;
 }
 
-#footer .footer-newsletter form input[type=email] {
+#footer .footer-newsletter form input[type='email'] {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
 
-#footer .footer-newsletter form input[type=submit] {
+#footer .footer-newsletter form input[type='submit'] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1762,7 +1820,7 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#footer .footer-newsletter form input[type=submit]:hover {
+#footer .footer-newsletter form input[type='submit']:hover {
   background: #209dd8;
 }
 
@@ -1789,7 +1847,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   color: #5e5e5e;
 }
 
